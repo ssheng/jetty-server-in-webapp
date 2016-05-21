@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jetty-server-in-webapp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="jetty-server-in-webapp-1.0.0.war">
+      <element id="artifact" artifact-name="jetty-server-in-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>

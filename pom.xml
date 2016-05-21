@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-http2-from-webapp</artifactId>
+    <artifactId>jetty-server-in-webapp</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
     <name>Jetty :: HTTP/2 From WebApp</name>
@@ -13,7 +13,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jetty-version>9.3.8.v20160314</jetty-version>
-        <alpn-version>8.1.8.v20160420</alpn-version>
     </properties>
 
     <build>
@@ -52,7 +51,6 @@
                 <configuration>
                     <jvmArgs>
                         -Dlog4j.configuration=file://${basedir}/src/main/resources/log4j.properties
-                        -Xbootclasspath/p:${settings.localRepository}/org/mortbay/jetty/alpn/alpn-boot/${alpn-version}/alpn-boot-${alpn-version}.jar
                     </jvmArgs>
                     <webApp>
                         <contextPath>/</contextPath>
@@ -78,10 +76,17 @@
         </dependency>
 
         <dependency>
-            <groupId>org.eclipse.jetty.http2</groupId>
-            <artifactId>http2-client</artifactId>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
             <version>${jetty-version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-jmx</artifactId>
+            <version>${jetty-version}</version>
+        </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
