@@ -8,6 +8,7 @@ This demo runs on any OS.
 ----
 $ mvn clean install
 $ mvn jetty:run-forked
+curl http://localhost:8080/demo/
 ----
 
 === JDK Dependency
